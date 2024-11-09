@@ -29,6 +29,10 @@ vim.opt.colorcolumn = "80"
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
+-- for linux
+-- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+-- for Windows
 vim.opt.undodir = os.getenv("LOCALAPPDATA") .. "/nvim-data/.vimfiles/undodir"
 vim.opt.undofile = true
 
