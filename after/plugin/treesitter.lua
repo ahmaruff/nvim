@@ -33,7 +33,13 @@ require 'nvim-treesitter.configs'.setup {
         "vimdoc",
         "query",
         "markdown",
-        "markdown_inline"
+        "markdown_inline",
+        "html",
+        "javascript",
+        "css",
+        "php",
+        "php_only",
+        "go"
     },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
