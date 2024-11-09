@@ -39,7 +39,8 @@ require 'nvim-treesitter.configs'.setup {
         "css",
         "php",
         "php_only",
-        "go"
+        "go",
+        "blade"
     },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
