@@ -40,6 +40,10 @@ require('mason-lspconfig').setup({
         'rust_analyzer',
         'gopls',
         'html',
+        "phpactor",
+        "sqlls",
+        "cssls",
+        "eslint"
     },
     handlers = {
         function(server_name)
