@@ -40,7 +40,6 @@ require('mason-lspconfig').setup({
         'rust_analyzer',
         'gopls',
         'html',
-        "phpactor",
         "sqlls",
         "cssls",
         "eslint"
@@ -76,7 +75,7 @@ cmp.setup({
         -- Scroll up and down in the completion documentation
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        
+
         -- Simple tab complete
         ['<Tab>'] = cmp.mapping(function(fallback)
             local col = vim.fn.col('.') - 1
