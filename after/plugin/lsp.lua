@@ -42,11 +42,37 @@ require('mason-lspconfig').setup({
         'html',
         "sqlls",
         "cssls",
-        "eslint"
+        "eslint",
+        'intelephense',
+        "jsonls",
+        "pint",
+        "php-cs-fixer",
+        "css_variables"
     },
     handlers = {
         function(server_name)
         require('lspconfig')[server_name].setup({})
+        end,
+
+        -- custom handlers 
+        intelephense = function()
+            require("lspconfig").intelephense.setup({
+                setting = {
+                    intelephense = {
+                        files = {
+                            maxSize = 2000000;
+                        }
+                    }
+                },
+
+                root_dir = function(pattern)
+                    local cwd = vim.uv.cwd()
+                    local root = require("lspconfig").util.root_pattern('composer.json', '.git')(pattern)
+
+                    -- prefer cwd if root is a descendant
+                    return require("lspconfig").util.path.is_descendant(cwd, root) and cwd or root
+                end,
+            })
         end,
     },
 })
